@@ -1,46 +1,48 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php'; // Load PHPMailer
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = strip_tags(trim($_POST["name"]));
-  $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-  $phone = trim($_POST["phone"]);
-  $message = trim($_POST["message"]);
+    $name = strip_tags(trim($_POST["name"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $phone = trim($_POST["phone"]);
+    $message = trim($_POST["message"]);
 
-  // Check that data was sent to the mailer
-  if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    // Set a 400 (bad request) response code and exit
-    http_response_code(400);
-    echo "Please complete the form and try again.";
-    exit;
-  }
+    if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400);
+        echo "Please complete the form and try again.";
+        exit;
+    }
 
-  // Set the recipient email address
-  $recipient = "info@fjttco.com"; // Replace with your email address
+    // Configure PHPMailer for HostGator SMTP
+    $mail = new PHPMailer(true);
 
-  // Set the email subject
-  $subject = "New contact from $name";
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'mail.fjttco.com'; // Change to your HostGator SMTP server
+        $mail->SMTPAuth = true;
+        $mail->Username = 'ali_alghaib@fjttco.com'; // Change to your HostGator email
+        $mail->Password = 'moomzilla11'; // Use your HostGator email password
+        $mail->SMTPSecure = 'ssl'; // Use 'tls' if you're using Port 587
+        $mail->Port = 465; // Use 465 for SSL or 587 for TLS
 
-  // Build the email content
-  $email_content = "Name: $name\n";
-  $email_content .= "Email: $email\n\n";
-  $email_content .= "Phone: $phone\n\n";
-  $email_content .= "Message:\n$message\n";
+        // Email settings
+        $mail->setFrom('ali_alghaib@fjttco.com', 'FJ Trading Co.');
+        $mail->addAddress('ali_alghaib@fjttco.com'); // Your HostGator email
 
-  // Build the email headers
-  $email_headers = "From: $name <$email>";
 
-  // Send the email
-  if (mail($recipient, $subject, $email_content, $email_headers)) {
-    // Set a 200 (okay) response code
-    http_response_code(200);
-    echo "Thank You! Your message has been sent.";
-  } else {
-    // Set a 500 (internal server error) response code
-    http_response_code(500);
-    echo "Oops! Something went wrong and we couldn't send your message.";
-  }
-} else {
-  // Not a POST request, set a 403 (forbidden) response code
-  http_response_code(403);
-  echo "There was a problem with your submission, please try again.";
+        $mail->Subject = "New Contact from $name";
+        $mail->Body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$message";
+
+        $mail->send();
+        http_response_code(200);
+        echo "Thank You! Your message has been sent.";
+    } catch (Exception $e) {
+        file_put_contents("debug_log.txt", "Mailer Error: " . $mail->ErrorInfo . "\n", FILE_APPEND);
+        http_response_code(500);
+        echo "Oops! Something went wrong and we couldn't send your message.";
+    }
 }
 ?>

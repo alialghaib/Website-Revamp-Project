@@ -1,9 +1,16 @@
-// Mobile menu toggle
+// Mobile menu toggle - Improved for smooth animation
 const mobileToggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
 
 mobileToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+  
+  // Smooth expand/collapse effect
+  if (navLinks.classList.contains('active')) {
+    navLinks.style.maxHeight = navLinks.scrollHeight + "px";  // Expand to full height
+  } else {
+    navLinks.style.maxHeight = "0px";  // Collapse back
+  }
 });
 
 // Language switch
@@ -32,10 +39,28 @@ function switchLanguage(lang) {
 enBtn.addEventListener('click', () => switchLanguage('en'));
 arBtn.addEventListener('click', () => switchLanguage('ar'));
 
-// Form submission (placeholder)
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-  // Form will submit to the action specified in the HTML
-  // This is just for additional validation or custom handling
-  console.log('Form submitted');
+// Form submission with AJAX handling
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    let formData = new FormData(contactForm); // Capture form data
+
+    fetch(contactForm.action, {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("form-message").style.display = "block";
+        document.getElementById("form-message").innerHTML = "✅ Your message has been sent successfully!";
+        contactForm.reset(); // Clear form fields after submission
+    })
+    .catch(error => {
+        document.getElementById("form-message").style.display = "block";
+        document.getElementById("form-message").innerHTML = "❌ There was an error sending your message.";
+        console.error("Error:", error);
+    });
 });
+
