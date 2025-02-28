@@ -1,0 +1,9 @@
+Name: John Doe
+Email: john@example.com
+Phone: 123456789
+Message: Testing the contact form.
+Name: Ali Al-Ghaib
+Email: john@example.com
+Phone: 8197081000
+Message: yo
+Attempting to send email...

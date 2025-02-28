@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FJ Trading Co. - contact us</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="images/logo.png" alt="FJ Trading Co ">
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="signage-website-html.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="#about" data-en="About Us" data-ar="من نحن">About Us</a></li>
+          <li><a href="#services" data-en="Services" data-ar="خدماتنا">Services</a></li>
+          <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+          <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+        </ul>
+        <div class="language-switch">
+          <button id="en-btn" class="active" data-lang="en">EN</button>
+          <button id="ar-btn" data-lang="ar">AR</button>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">≡</button>
+      </nav>
+    </div>
+  </header>
+
+<section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
+        <p data-en="Get in touch for quotes, information, or support" data-ar="تواصل معنا للحصول على عروض الأسعار أو المعلومات أو الدعم">Get in touch for quotes, information, or support</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 data-en="Our Information" data-ar="معلوماتنا">Our Information</h3>
+          <p><i>📍</i> <span data-en="Al-Mansour District, Baghdad, Iraq" data-ar="حي المنصور، بغداد، العراق">Al-Mansour District, Baghdad, Iraq</span></p>
+          <p><i>📱</i> <span>+964 123 456 7890</span></p>
+          <p><i>✉️</i> <span>info@fjttco.com</span></p>
+          <p><i>🕙</i> <span data-en="Sunday to Thursday: 8am - 5pm" data-ar="الأحد إلى الخميس: 8 صباحًا - 5 مساءً">Sunday to Thursday: 8am - 5pm</span></p>
+        </div>
+        <div class="contact-form">
+          <h3 data-en="Send us a Message" data-ar="أرسل لنا رسالة">Send us a Message</h3>
+          <form id="contactForm" action="contact-form.php" method="POST">
+            <div id="form-message" style="display: none; color: green; font-weight: bold;"></div> <!--For testing-->
+            <div>
+              <label for="name" data-en="Name" data-ar="الاسم">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+              <label for="email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="phone" data-en="Phone" data-ar="الهاتف">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div>
+              <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 data-en="About FJ" data-ar="عن FJ">About FJ</h3>
+          <p data-en="FJ Tading CO.  is a leading provider of road safety solutions in Iraq, with over 20 years of experience in the industry." data-ar="FJ Trading CO. للافتات المرورية هي شركة رائدة في توفير حلول سلامة الطرق في العراق، مع أكثر من 20 عامًا من الخبرة في هذا المجال.">FJ Trading CO. is a leading provider of road safety solutions in Iraq, with over 20 years of experience in the industry.</p>
+        </div>
+        <div class="footer-section">
+          <h3 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="signage-website-html.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="#services" data-en="Services" data-ar="خدماتنا">Services</a></li>
+            <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+            <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/FjGeneralTradingContracting/?ref=aymt_homepage_panel"><span><i class = "fab fa-facebook"></i></span></a>
+            <a href="https://x.com/TradingFJ"><span><i class = "fa-brands fa-x-twitter"></i></span></a>
+            <a href="https://www.linkedin.com/company/fj-trading-company-llc-/?trk=company_logo"><span><i class = "fab fa-linkedin"></i></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 FJ Trading CO. <span data-en="All Rights Reserved." data-ar="جميع الحقوق محفوظة.">All Rights Reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="signage-website-js.js"></script>
+</html>
