@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FJ Trading Co. - contact us</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      gsap.utils.toArray(".project").forEach((project, index) => {
+        gsap.to(project, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          delay: index * 0.2,
+          scrollTrigger: {
+            trigger: project,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="images/logo.png" alt="FJ Trading Co ">
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="signage-website-html.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="about-us.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
+          <li><a href="service.html" data-en="Products & Services" data-ar="المنتجات والخدمات">Products & Services</a></li>
+          <li><a href="project.html" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+          <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+        </ul>
+        <div class="language-switch">
+          <button id="en-btn" class="active" data-lang="en">EN</button>
+          <button id="ar-btn" data-lang="ar">AR</button>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">≡</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="projects-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Our Projects" data-ar="مشاريعنا">Our Projects</h2>
+        <p data-en="A showcase of our latest works" data-ar="عرض لأحدث مشاريعنا">A showcase of our latest works</p>
+      </div>
+
+      <div class="projects-list">
+        <div class="project" id="project-basra" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Basra Sport City" data-ar="مدينة البصرة الرياضية">Basra Sport City</h3>
+            <p data-en="Supply and installation of internal/external signs. Supplying Traffic & Guide Signs for BSC Roads."
+              data-ar="توريد وتركيب اللافتات الداخلية والخارجية. توريد لافتات المرور والإرشاد لطرق مدينة البصرة الرياضية.">
+              Supply and installation of internal signs. Supplying Images to aide in navigation and labeling of
+              ammenities.
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/BasraSC1.png');"></div>
+          <div class="project-image" style="background-image: url('images/BasraSC2.png');"></div>
+        </div>
+
+        <div class="project" id="project-rumaila" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Rumaila Oil Field - BP Iraq NV" data-ar="حقل الرميلة النفطي - BP العراق">Rumaila Oil Field - BP Iraq NV</h3>
+            <p data-en="Supply and Installation of Road Signs, Safety Signs, buildings Signs and temporary Signs."
+              data-ar="توريد وتركيب لافتات الطرق، ولافتات السلامة، ولافتات المباني، ولافتات مؤقتة.">
+              Supply and Installation of Road Signs, Safety Signs, buildings Signs and temporary Signs.
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/BP1.png');"></div>
+          <div class="project-image" style="background-image: url('images/BP2.png');"></div>
+        </div>
+
+        <div class="project" id="project-exp1" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Expressway No.1" data-ar="الطريق السريع رقم 1">Expressway No.1</h3>
+            <p data-en="Supply and Installation of Traffic and Directional Signs, and Road Marking Paints"
+              data-ar="توريد وتركيب لافتات المرور والإرشاد، ودهانات تخطيط الطرق.">
+              Supply and Installation of Traffic and Directional Signs, and Road Marking Paints
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/exp1.png');"></div>
+          <div class="project-image" style="background-image: url('images/exp1p2.png');"></div>
+          <div class="project-image" style="background-image: url('images/EN3.png');"></div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Salah Al Deen Road" data-ar="طريق صلاح الدين">Salah Al Deen Road</h3>
+            <p data-en="Road Furnishing." data-ar="تأثيث الطريق.">
+              Road Furnishing.
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/SalahAlDeen.png');"></div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Al Maria Island - Abu Dhabi" data-ar="جزيرة المارية - أبوظبي">Al Maria Island - Abu Dhabi</h3>
+            <p data-en="Design, fabrication, and installation of directional and road safety signs."
+              data-ar="تصميم وتصنيع وتركيب لافتات الاتجاه ولافتات السلامة المرورية.">
+              Design, fabrication, and installation of directional and road safety signs.
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/AlMaria.png');"></div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Karbala Signs" data-ar="لافتات كربلاء">Karbala Signs</h3>
+            <p data-en="Supply and Installation of Streets Names Signs & Traffic Signs" data-ar="توريد وتركيب لافتات أسماء الشوارع ولافتات المرور.">
+              Supply and Installation of Streets Names Signs & Traffic Signs
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/KB.png');"></div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Dubai Gantry & Cantilever Signs" data-ar="لافتات جسر كانتليفر - دبي">Dubai Gantry & Cantilever Signs</h3>
+            <p data-en="Gantry Work." data-ar="تركيب لافتات جسرية.">
+              Gantry Work.
+            </p>
+          </div>
+          <div class="project-image" style="background-image: url('images/DB1.png');"></div>
+          <div class="project-image" style="background-image: url('images/DB2.png');"></div>
+        </div>
+
+        <div class="project" id="project-majnoon" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Majnoon Oil Field - Shell" data-ar="حقل مجنون النفطي - شل">Majnoon Oil Field - Shell</h3>
+            <p data-en="Supplying Traffic Signs, Safety Signs and Speed Humps."
+              data-ar="توريد لافتات المرور، ولافتات السلامة، ومطبات السرعة.">
+              Supplying Traffic Signs, Safety Signs and Speed Humps.
+            </p>
+          </div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Anbar & Saladin Road Signs" data-ar="لافتات الطرق في الأنبار وصلاح الدين">Anbar & Saladin Road Signs</h3>
+            <p data-en="Design, Supply and Installation for Road signs" data-ar="تصميم وتوريد وتركيب لافتات الطرق.">
+              Design, Supply and Installation for Road signs
+            </p>
+          </div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Mansour and Babylon Hotels" data-ar="فنادق المنصور وبابل">Mansour and Babylon Hotels</h3>
+            <p data-en="Design, Supply and Installation of Hotel Signs" data-ar="تصميم وتوريد وتركيب لافتات الفنادق.">
+              Design, Supply and Installation of Hotel Signs
+            </p>
+          </div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Azadi City – Erbil" data-ar="مدينة آزادي - أربيل">Azadi City – Erbil</h3>
+            <p data-en="Design for Addressing, Plot Numbering, Street Names, and Traffic signs"
+              data-ar="تصميم العناوين، وترقيم القطع، وأسماء الشوارع، ولافتات المرور.">
+              Design for Addressing, Plot Numbering, Street Names, and Traffic signs
+            </p>
+          </div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Anbar and Saladin Directional Signs" data-ar="لافتات الاتجاه في الأنبار وصلاح الدين">Anbar and Saladin Directional Signs</h3>
+            <p data-en="Supply and Installation of Directional & Traffic Signs" data-ar="توريد وتركيب لافتات الاتجاه ولافتات المرور.">
+              Supply and Installation of Directional & Traffic Signs
+            </p>
+          </div>
+        </div>
+
+        <div class="project" data-scroll>
+          <div class="project-content">
+            <h3 data-en="Army Canal Rehabilitation" data-ar="تأهيل قناة الجيش">Army Canal Rehabilitation</h3>
+            <p data-en="Design of detours, supply and installation of Road Works Temporary Signs"
+              data-ar="تصميم التحويلات، وتوريد وتركيب لافتات مؤقتة لأعمال الطرق.">
+              Design of detours, supply and installation of Road Works Temporary Signs
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 data-en="About FJ" data-ar="عن FJ">About FJ</h3>
+          <p data-en="FJ Tading CO.  is a leading provider of road safety solutions in Iraq, with over 20 years of experience in the industry."
+            data-ar="FJ Trading CO. للافتات المرورية هي شركة رائدة في توفير حلول سلامة الطرق في العراق، مع أكثر من 20 عامًا من الخبرة في هذا المجال.">
+            FJ Trading CO. is a leading provider of road safety solutions in Iraq, with over 20 years of experience in the industry.</p>
+        </div>
+        <div class="footer-section">
+          <h3 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="signage-website-html.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="service.html" data-en="Products & Services" data-ar="المنتجات والخدمات">Products & Services</a></li>
+            <li><a href="project.html" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+            <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/FjGeneralTradingContracting/?ref=aymt_homepage_panel"><span><i class="fab fa-facebook"></i></span></a>
+            <a href="https://x.com/TradingFJ"><span><i class="fa-brands fa-x-twitter"></i></span></a>
+            <a href="https://www.linkedin.com/company/fj-trading-company-llc-/?trk=company_logo"><span><i class="fab fa-linkedin"></i></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 FJ Trading CO. <span data-en="All Rights Reserved." data-ar="جميع الحقوق محفوظة.">All Rights Reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="signage-website-js.js"></script>
+</body>
+
+</html>

@@ -41,26 +41,66 @@ arBtn.addEventListener('click', () => switchLanguage('ar'));
 
 // Form submission with AJAX handling
 const contactForm = document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent page reload
-
-    let formData = new FormData(contactForm); // Capture form data
+if (contactForm) {
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
 
     fetch(contactForm.action, {
-        method: "POST",
-        body: formData
+      method: "POST",
+      body: formData,
     })
     .then(response => response.text())
     .then(data => {
-        document.getElementById("form-message").style.display = "block";
-        document.getElementById("form-message").innerHTML = "✅ Your message has been sent successfully!";
-        contactForm.reset(); // Clear form fields after submission
+      document.getElementById("form-message").style.display = "block";
+      document.getElementById("form-message").innerHTML = "✅ Your message has been sent successfully!";
+      contactForm.reset();
     })
     .catch(error => {
-        document.getElementById("form-message").style.display = "block";
-        document.getElementById("form-message").innerHTML = "❌ There was an error sending your message.";
-        console.error("Error:", error);
+      document.getElementById("form-message").style.display = "block";
+      document.getElementById("form-message").innerHTML = "❌ There was an error sending your message.";
+      console.error("Error:", error);
     });
+  });
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".project-slideshow").forEach(slideshow => {
+    const slides = slideshow.querySelectorAll(".slide");
+    const prevBtn = slideshow.querySelector(".prev");
+    const nextBtn = slideshow.querySelector(".next");
+    let current = 0;
+
+    const showSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    };
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener("click", () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      });
+    }
+
+    // Auto-slide
+    if (slides.length > 1) {
+      setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 4000);
+    }
+  });
 });
+
+
+
 
